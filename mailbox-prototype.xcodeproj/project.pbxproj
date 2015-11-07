@@ -12,6 +12,7 @@
 		CAD8397E1BE9A47E00082B92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD8397C1BE9A47E00082B92 /* Main.storyboard */; };
 		CAD839801BE9A47E00082B92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD8397F1BE9A47E00082B92 /* Assets.xcassets */; };
 		CAD839831BE9A47E00082B92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD839811BE9A47E00082B92 /* LaunchScreen.storyboard */; };
+		CAD8398B1BE9A77400082B92 /* MailboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD8398A1BE9A77400082B92 /* MailboxViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CAD8397F1BE9A47E00082B92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAD839821BE9A47E00082B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAD839841BE9A47E00082B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAD8398A1BE9A77400082B92 /* MailboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailboxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				CAD839781BE9A47E00082B92 /* AppDelegate.swift */,
+				CAD8398A1BE9A77400082B92 /* MailboxViewController.swift */,
 				CAD8397A1BE9A47E00082B92 /* ViewController.swift */,
 				CAD8397C1BE9A47E00082B92 /* Main.storyboard */,
 				CAD8397F1BE9A47E00082B92 /* Assets.xcassets */,
@@ -137,6 +140,7 @@
 			files = (
 				CAD8397B1BE9A47E00082B92 /* ViewController.swift in Sources */,
 				CAD839791BE9A47E00082B92 /* AppDelegate.swift in Sources */,
+				CAD8398B1BE9A77400082B92 /* MailboxViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +288,7 @@
 				CAD839891BE9A47E00082B92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
