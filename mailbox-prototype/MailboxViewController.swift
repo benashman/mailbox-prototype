@@ -26,7 +26,10 @@ class MailboxViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set deafult states
         messageParentView.backgroundColor = defaultColor
+        leftMenuIcon.alpha = 0.2
+        rightMenuIcon.alpha = 0.2
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +50,11 @@ class MailboxViewController: UIViewController {
             print("translation: \(translation.x)")
             
             switch translation.x {
-
+            
+            // Show archive icon
+            case 0...60:
+                leftMenuIcon.alpha = convertValue(translation.x, r1Min: 0, r1Max: 60, r2Min: 0.2, r2Max: 1)
+            
             // Archive
             case 60...220:
                 messageParentView.backgroundColor = archiveColor
@@ -57,8 +64,11 @@ class MailboxViewController: UIViewController {
             case 220...screenWidth:
                 self.messageParentView.backgroundColor = deleteColor
                 leftMenuIcon.image = UIImage(named: "delete_icon")
-                
+            
             // Reschedule
+            case -60...(-0.1):
+                rightMenuIcon.alpha = convertValue(translation.x, r1Min: -0.5, r1Max: -60, r2Min: 0.2, r2Max: 1)
+                
             case -220...(-60):
                 self.messageParentView.backgroundColor = laterColor
                 rightMenuIcon.image = UIImage(named: "later_icon")

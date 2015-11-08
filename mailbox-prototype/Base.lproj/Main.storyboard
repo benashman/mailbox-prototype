@@ -22,12 +22,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="later_icon" id="trs-S4-haU" userLabel="Right Menu Icon">
-                                        <rect key="frame" x="335" y="30" width="25" height="25"/>
+                                        <rect key="frame" x="330" y="30" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <animations/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="archive_icon" id="Lmu-E6-xnY">
-                                        <rect key="frame" x="15" y="30" width="25" height="25"/>
+                                        <rect key="frame" x="20" y="30" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <animations/>
                                     </imageView>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CACE4F7F1BEFC266001CAE45 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACE4F7E1BEFC266001CAE45 /* Common.swift */; settings = {ASSET_TAGS = (); }; };
 		CAD839791BE9A47E00082B92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD839781BE9A47E00082B92 /* AppDelegate.swift */; };
 		CAD8397B1BE9A47E00082B92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD8397A1BE9A47E00082B92 /* ViewController.swift */; };
 		CAD8397E1BE9A47E00082B92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD8397C1BE9A47E00082B92 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CACE4F7E1BEFC266001CAE45 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		CAD839751BE9A47E00082B92 /* mailbox-prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mailbox-prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAD839781BE9A47E00082B92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAD8397A1BE9A47E00082B92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				CAD8398A1BE9A77400082B92 /* MailboxViewController.swift */,
 				CAD8397A1BE9A47E00082B92 /* ViewController.swift */,
 				CAD8397C1BE9A47E00082B92 /* Main.storyboard */,
+				CACE4F7E1BEFC266001CAE45 /* Common.swift */,
 				CAD8397F1BE9A47E00082B92 /* Assets.xcassets */,
 				CAD839811BE9A47E00082B92 /* LaunchScreen.storyboard */,
 				CAD839841BE9A47E00082B92 /* Info.plist */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACE4F7F1BEFC266001CAE45 /* Common.swift in Sources */,
 				CAD8397B1BE9A47E00082B92 /* ViewController.swift in Sources */,
 				CAD839791BE9A47E00082B92 /* AppDelegate.swift in Sources */,
 				CAD8398B1BE9A77400082B92 /* MailboxViewController.swift in Sources */,
