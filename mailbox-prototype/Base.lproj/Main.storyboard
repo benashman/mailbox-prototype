@@ -61,6 +61,7 @@
                         <outlet property="message" destination="9nW-Ig-fAp" id="Uae-A3-dB0"/>
                         <outlet property="messageParentView" destination="cyt-oV-Fbh" id="kYp-rT-1IJ"/>
                         <outlet property="rightMenuIcon" destination="trs-S4-haU" id="9Gr-b2-TOf"/>
+                        <segue destination="yCH-Eo-DVg" kind="modal" identifier="laterMenu" modalTransitionStyle="crossDissolve" id="gBf-lj-xtf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,11 +73,43 @@
             </objects>
             <point key="canvasLocation" x="163.5" y="359.5"/>
         </scene>
+        <!--Later Menu View Controller-->
+        <scene sceneID="AH7-Yl-rhQ">
+            <objects>
+                <viewController id="yCH-Eo-DVg" customClass="LaterMenuViewController" customModule="mailbox_prototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vLq-Y6-fXu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="later_menu_6s" id="bLm-UK-DrD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JoO-7u-tuZ" userLabel="later_today_button">
+                                <rect key="frame" x="37" y="147" width="89" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="scheduleForLaterToday:" destination="yCH-Eo-DVg" eventType="touchUpInside" id="2m0-aE-yhA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qld-p3-tyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="611.5" y="359.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="archive_icon" width="25" height="25"/>
         <image name="inbox_6s" width="375" height="773"/>
         <image name="later_icon" width="25" height="25"/>
+        <image name="later_menu_6s" width="375" height="667"/>
         <image name="message_6s" width="375" height="85"/>
         <image name="nav_6s" width="375" height="144"/>
     </resources>

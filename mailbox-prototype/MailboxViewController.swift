@@ -35,8 +35,10 @@ class MailboxViewController: UIViewController {
         messageParentView.backgroundColor = defaultColor
         leftMenuIcon.alpha = 0.0
         rightMenuIcon.alpha = 0.0
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "scheduleForLaterToday", name: "Later Today", object: nil)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -105,23 +107,33 @@ class MailboxViewController: UIViewController {
                     self.leftMenuIcon.transform = CGAffineTransformMakeTranslation(self.message.frame.origin.x - 60, 0)
                     }, completion: { (finished: Bool) -> Void in
                         self.resetActionStates()
-                        
-                        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 2, options: [], animations: {
-                            self.inbox.transform = CGAffineTransformMakeTranslation(0, -self.message.frame.size.height)
-                        }, completion: nil)
+                        self.refreshInbox()
                     }
                 )
             case "later":
-                UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 10, options: [], animations: {
+                UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 10, options: [], animations: {
                     self.message.frame.origin.x = -self.screenWidth - 100
                     self.rightMenuIcon.transform = CGAffineTransformMakeTranslation(self.message.frame.origin.x + 60, 0)
                     }, completion: { (finished: Bool) -> Void in
                         self.resetActionStates()
+                        self.performSegueWithIdentifier("laterMenu", sender: self)
                 })
             default:
                 return
             }
         }
+    }
+    
+    func scheduleForLaterToday() {
+        delay(0.1) {
+            self.refreshInbox()
+        }
+    }
+    
+    func refreshInbox() {
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 2, options: [], animations: {
+            self.inbox.transform = CGAffineTransformMakeTranslation(0, -self.message.frame.size.height)
+        }, completion: nil)
     }
     
     func resetActionStates() {
