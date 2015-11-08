@@ -19,7 +19,7 @@ class MailboxViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        messageParentView.backgroundColor = UIColor.grayColor()
+        messageParentView.backgroundColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +68,7 @@ class MailboxViewController: UIViewController {
             
             self.messageParentView.backgroundColor = UIColor.grayColor()
 
-            UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 10, options: [], animations: {
+            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 10, options: [], animations: {
                 self.message.center = self.messageOriginalCenter
                 }, completion: { (finished: Bool) -> Void in
                     self.resetActionStates()

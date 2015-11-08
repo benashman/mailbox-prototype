@@ -9,46 +9,35 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MailboxViewController" customModule="mailbox_prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="help_label" id="eu6-ca-ftt">
-                                <rect key="frame" x="0.0" y="65" width="320" height="37"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <animations/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="search" id="6BV-6R-vAt">
-                                <rect key="frame" x="0.0" y="102" width="320" height="42"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <animations/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nav" id="KNl-CC-ldv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nav_6s" id="2gU-R6-JW6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" id="cyt-oV-Fbh" userLabel="message">
-                                <rect key="frame" x="0.0" y="144" width="320" height="86"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="later_icon" id="trs-S4-haU">
-                                        <rect key="frame" x="277" y="30" width="25" height="25"/>
+                                        <rect key="frame" x="335" y="30" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <animations/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="archive_icon" id="Lmu-E6-xnY">
-                                        <rect key="frame" x="18" y="30" width="25" height="25"/>
+                                        <rect key="frame" x="15" y="30" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <animations/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="message" id="GUe-T1-e6j">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="message_6s" id="9nW-Ig-fAp" userLabel="message">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="Lh5-kk-9R4" appends="YES" id="BMC-fz-D2M"/>
+                                            <outletCollection property="gestureRecognizers" destination="vNu-4i-kFF" appends="YES" id="NYT-PY-Sew"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -56,8 +45,8 @@
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                             </view>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="feed" id="TeT-ed-eLG">
-                                <rect key="frame" x="0.0" y="229" width="320" height="1202"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="inbox_6s" id="FeQ-yf-vRe">
+                                <rect key="frame" x="0.0" y="229" width="375" height="437"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </imageView>
@@ -65,29 +54,28 @@
                         <animations/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="leftMenuIcon" destination="Lmu-E6-xnY" id="fBR-SO-yJs"/>
-                        <outlet property="message" destination="GUe-T1-e6j" id="mgW-9u-yai"/>
+                        <outlet property="message" destination="9nW-Ig-fAp" id="Uae-A3-dB0"/>
                         <outlet property="messageParentView" destination="cyt-oV-Fbh" id="kYp-rT-1IJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Lh5-kk-9R4">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="vNu-4i-kFF">
                     <connections>
-                        <action selector="swipeMessage:" destination="BYZ-38-t0r" id="YYD-tR-M7T"/>
+                        <action selector="swipeMessage:" destination="BYZ-38-t0r" id="vwq-SZ-meO"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="162" y="343"/>
+            <point key="canvasLocation" x="163.5" y="359.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="archive_icon" width="25" height="25"/>
-        <image name="feed" width="320" height="1202"/>
-        <image name="help_label" width="320" height="37"/>
+        <image name="inbox_6s" width="375" height="437"/>
         <image name="later_icon" width="25" height="25"/>
-        <image name="message" width="320" height="86"/>
-        <image name="nav" width="320" height="65"/>
-        <image name="search" width="320" height="42"/>
+        <image name="message_6s" width="375" height="85"/>
+        <image name="nav_6s" width="375" height="144"/>
     </resources>
 </document>
