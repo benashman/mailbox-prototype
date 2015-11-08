@@ -12,44 +12,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nav_6s" id="2gU-R6-JW6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <animations/>
-                            </imageView>
-                            <view contentMode="scaleToFill" id="cyt-oV-Fbh" userLabel="message">
-                                <rect key="frame" x="0.0" y="144" width="375" height="85"/>
+                            <view contentMode="scaleToFill" id="Ril-vR-FB2" userLabel="Sidebar view">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="later_icon" id="trs-S4-haU" userLabel="Right Menu Icon">
-                                        <rect key="frame" x="330" y="30" width="25" height="25"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sidebar" id="Xhf-2d-CmC">
+                                        <rect key="frame" x="29" y="0.0" width="317" height="667"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <animations/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="archive_icon" id="Lmu-E6-xnY">
-                                        <rect key="frame" x="20" y="30" width="25" height="25"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <animations/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="message_6s" id="9nW-Ig-fAp" userLabel="message">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <animations/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="vNu-4i-kFF" appends="YES" id="NYT-PY-Sew"/>
-                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <gestureRecognizers/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="inbox_6s" id="5R7-Ux-ay7">
-                                <rect key="frame" x="0.0" y="229" width="375" height="773"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <view contentMode="scaleToFill" id="yWN-qY-q17" userLabel="Inbox view">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nav_6s" id="2gU-R6-JW6">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <animations/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" id="cyt-oV-Fbh" userLabel="message">
+                                        <rect key="frame" x="0.0" y="144" width="375" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="later_icon" id="trs-S4-haU" userLabel="Right Menu Icon">
+                                                <rect key="frame" x="330" y="30" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <animations/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="archive_icon" id="Lmu-E6-xnY">
+                                                <rect key="frame" x="20" y="30" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <animations/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="message_6s" id="9nW-Ig-fAp" userLabel="message">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <animations/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="vNu-4i-kFF" appends="YES" id="NYT-PY-Sew"/>
+                                                </connections>
+                                            </imageView>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                    </view>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="inbox_6s" id="5R7-Ux-ay7">
+                                        <rect key="frame" x="0.0" y="229" width="375" height="773"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <animations/>
+                                    </imageView>
+                                </subviews>
                                 <animations/>
-                            </imageView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,10 +78,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="inbox" destination="5R7-Ux-ay7" id="7Pl-lG-0ej"/>
+                        <outlet property="inboxView" destination="yWN-qY-q17" id="EXv-pM-TNg"/>
                         <outlet property="leftMenuIcon" destination="Lmu-E6-xnY" id="fBR-SO-yJs"/>
                         <outlet property="message" destination="9nW-Ig-fAp" id="Uae-A3-dB0"/>
                         <outlet property="messageParentView" destination="cyt-oV-Fbh" id="kYp-rT-1IJ"/>
                         <outlet property="rightMenuIcon" destination="trs-S4-haU" id="9Gr-b2-TOf"/>
+                        <outlet property="sidebarView" destination="Ril-vR-FB2" id="w6N-7I-lVw"/>
                         <segue destination="yCH-Eo-DVg" kind="modal" identifier="laterMenu" modalTransitionStyle="crossDissolve" id="gBf-lj-xtf"/>
                     </connections>
                 </viewController>
@@ -112,5 +135,6 @@
         <image name="later_menu_6s" width="375" height="667"/>
         <image name="message_6s" width="375" height="85"/>
         <image name="nav_6s" width="375" height="144"/>
+        <image name="sidebar" width="317" height="667"/>
     </resources>
 </document>

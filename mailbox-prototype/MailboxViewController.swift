@@ -14,8 +14,12 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var messageParentView: UIView!
     @IBOutlet weak var leftMenuIcon: UIImageView!
     @IBOutlet weak var rightMenuIcon: UIImageView!
-    @IBOutlet weak var inbox: UIImageView!
     
+    @IBOutlet weak var sidebarView: UIView!
+    @IBOutlet weak var inboxView: UIView!
+    @IBOutlet weak var inbox: UIImageView!
+
+    var sidebarColor = UIColor(red: 0.269, green: 0.269, blue: 0.269, alpha: 1.0)
     var defaultColor = UIColor(red: 0.889, green: 0.889, blue: 0.889, alpha: 1.0)
     var archiveColor = UIColor(red: 0.361, green: 0.859, blue: 0.39, alpha: 1.0)
     var deleteColor  = UIColor(red: 0.943, green: 0.337, blue: 0.0, alpha: 1.0)
@@ -23,20 +27,33 @@ class MailboxViewController: UIViewController {
     var listColor    = UIColor(red: 0.847, green: 0.656, blue: 0.45, alpha: 1.0)
     
     var messageOriginalCenter: CGPoint!
+    var inboxViewOriginalCenter: CGPoint!
     
     let screenWidth = UIScreen.mainScreen().bounds.size.width
     
     var action = "none"
     
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.becomeFirstResponder()
+        
         // Set deafult states
+        sidebarView.backgroundColor = sidebarColor
         messageParentView.backgroundColor = defaultColor
         leftMenuIcon.alpha = 0.0
         rightMenuIcon.alpha = 0.0
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "scheduleForLaterToday", name: "Later Today", object: nil)
+        
+        // Add sidebar swipe gesture recognizer
+        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onEdgePan:")
+        edgeGesture.edges = UIRectEdge.Left
+        inboxView.addGestureRecognizer(edgeGesture)
     }
     
     override func didReceiveMemoryWarning() {
@@ -124,6 +141,19 @@ class MailboxViewController: UIViewController {
         }
     }
     
+    func onEdgePan(sender: UIScreenEdgePanGestureRecognizer) {
+        let translation = sender.translationInView(view)
+        
+        if sender.state == .Began {
+            inboxViewOriginalCenter = inboxView.center
+        } else if sender.state == .Changed {
+            inboxView.center = CGPoint(x: inboxViewOriginalCenter.x + translation.x, y: inboxViewOriginalCenter.y)
+            print("panned edge")
+        } else if sender.state == .Ended {
+        
+        }
+    }
+    
     func scheduleForLaterToday() {
         delay(0.1) {
             self.refreshInbox()
@@ -145,4 +175,31 @@ class MailboxViewController: UIViewController {
         rightMenuIcon.image = UIImage(named: "later_icon")
         rightMenuIcon.transform = CGAffineTransformIdentity
     }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            // throw alert
+            let alertController = UIAlertController(title: "Undo last action?", message: "Are you sure you want to undo and move 1 item from Archive back to Inbox?", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in }
+            alertController.addAction(cancelAction)
+            
+            let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+            alertController.addAction(okAction)
+            
+            presentViewController(alertController, animated: true, completion: {
+            
+            })
+            // undo
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
