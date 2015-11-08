@@ -45,8 +45,8 @@
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                             </view>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="inbox_6s" id="FeQ-yf-vRe">
-                                <rect key="frame" x="0.0" y="229" width="375" height="437"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="inbox_6s" id="5R7-Ux-ay7">
+                                <rect key="frame" x="0.0" y="229" width="375" height="773"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </imageView>
@@ -56,6 +56,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="inbox" destination="5R7-Ux-ay7" id="7Pl-lG-0ej"/>
                         <outlet property="leftMenuIcon" destination="Lmu-E6-xnY" id="fBR-SO-yJs"/>
                         <outlet property="message" destination="9nW-Ig-fAp" id="Uae-A3-dB0"/>
                         <outlet property="messageParentView" destination="cyt-oV-Fbh" id="kYp-rT-1IJ"/>
@@ -74,7 +75,7 @@
     </scenes>
     <resources>
         <image name="archive_icon" width="25" height="25"/>
-        <image name="inbox_6s" width="375" height="437"/>
+        <image name="inbox_6s" width="375" height="773"/>
         <image name="later_icon" width="25" height="25"/>
         <image name="message_6s" width="375" height="85"/>
         <image name="nav_6s" width="375" height="144"/>

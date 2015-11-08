@@ -26,4 +26,3 @@ func convertValue(value: CGFloat, r1Min: CGFloat, r1Max: CGFloat, r2Min: CGFloat
     var ratio = (r2Max - r2Min) / (r1Max - r1Min)
     return value * ratio + r2Min - r1Min * ratio
 }
-
