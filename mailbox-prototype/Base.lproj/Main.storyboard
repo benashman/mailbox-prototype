@@ -29,11 +29,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nav_6s" id="2gU-R6-JW6">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <animations/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" id="cyt-oV-Fbh" userLabel="message">
                                         <rect key="frame" x="0.0" y="144" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -62,6 +57,11 @@
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                     </view>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nav_6s" id="2gU-R6-JW6">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <animations/>
+                                    </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="inbox_6s" id="5R7-Ux-ay7">
                                         <rect key="frame" x="0.0" y="229" width="375" height="773"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -135,6 +135,6 @@
         <image name="later_menu_6s" width="375" height="667"/>
         <image name="message_6s" width="375" height="85"/>
         <image name="nav_6s" width="375" height="144"/>
-        <image name="sidebar" width="317" height="667"/>
+        <image name="sidebar" width="313" height="667"/>
     </resources>
 </document>

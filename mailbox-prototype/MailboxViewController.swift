@@ -118,7 +118,7 @@ class MailboxViewController: UIViewController {
                     }, completion: { (finished: Bool) -> Void in
                         self.resetActionStates()
                 })
-            case "delete":
+            case "archive", "delete":
                 UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 10, options: [], animations: {
                     self.message.frame.origin.x = self.screenWidth + 100
                     self.leftMenuIcon.transform = CGAffineTransformMakeTranslation(self.message.frame.origin.x - 60, 0)
@@ -127,7 +127,7 @@ class MailboxViewController: UIViewController {
                         self.refreshInbox()
                     }
                 )
-            case "later":
+            case "later", "list":
                 UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 10, options: [], animations: {
                     self.message.frame.origin.x = -self.screenWidth - 100
                     self.rightMenuIcon.transform = CGAffineTransformMakeTranslation(self.message.frame.origin.x + 60, 0)
@@ -141,21 +141,8 @@ class MailboxViewController: UIViewController {
         }
     }
     
-    func onEdgePan(sender: UIScreenEdgePanGestureRecognizer) {
-        let translation = sender.translationInView(view)
-        
-        if sender.state == .Began {
-            inboxViewOriginalCenter = inboxView.center
-        } else if sender.state == .Changed {
-            inboxView.center = CGPoint(x: inboxViewOriginalCenter.x + translation.x, y: inboxViewOriginalCenter.y)
-            print("panned edge")
-        } else if sender.state == .Ended {
-        
-        }
-    }
-    
     func scheduleForLaterToday() {
-        delay(0.1) {
+        delay(0.25) {
             self.refreshInbox()
         }
     }
@@ -176,21 +163,40 @@ class MailboxViewController: UIViewController {
         rightMenuIcon.transform = CGAffineTransformIdentity
     }
     
+    func undoLastAction() {
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 2, options: [], animations: {
+                self.inbox.transform = CGAffineTransformIdentity
+                self.messageParentView.transform = CGAffineTransformIdentity
+            }, completion: nil
+        )
+    }
+    
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
-            // throw alert
-            let alertController = UIAlertController(title: "Undo last action?", message: "Are you sure you want to undo and move 1 item from Archive back to Inbox?", preferredStyle: .Alert)
-            
+            let alertController = UIAlertController(title: "Undo last action?", message: "Are you sure you want to undo and move 1 item back to Inbox?", preferredStyle: .Alert)
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in }
             alertController.addAction(cancelAction)
+            let okAction = UIAlertAction(title: "Undo", style: .Default) { (action) in
+                self.message.frame.origin = CGPoint(x: 0, y: 0)
+                self.messageParentView.transform = CGAffineTransformMakeTranslation(0, -self.messageParentView.frame.size.height)
+                self.undoLastAction()
+            }
             
-            let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
             alertController.addAction(okAction)
+            presentViewController(alertController, animated: true, completion: {})
+        }
+    }
+    
+    func onEdgePan(sender: UIScreenEdgePanGestureRecognizer) {
+        let translation = sender.translationInView(view)
+        
+        if sender.state == .Began {
+            inboxViewOriginalCenter = inboxView.center
+        } else if sender.state == .Changed {
+            inboxView.center = CGPoint(x: inboxViewOriginalCenter.x + translation.x, y: inboxViewOriginalCenter.y)
+            print("panned edge")
+        } else if sender.state == .Ended {
             
-            presentViewController(alertController, animated: true, completion: {
-            
-            })
-            // undo
         }
     }
 }
