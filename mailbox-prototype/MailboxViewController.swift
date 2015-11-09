@@ -102,8 +102,6 @@ class MailboxViewController: UIViewController {
             
             switch action {
             case "none":
-                self.messageParentView.backgroundColor = defaultColor
-                
                 UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 10, options: [], animations: {
                     self.message.center = self.messageOriginalCenter
                     }, completion: { (finished: Bool) -> Void in
@@ -167,6 +165,7 @@ class MailboxViewController: UIViewController {
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 2, options: [], animations: {
                 self.inbox.transform = CGAffineTransformIdentity
                 self.messageParentView.transform = CGAffineTransformIdentity
+                self.messageParentView.backgroundColor = self.defaultColor
             }, completion: nil
         )
     }
