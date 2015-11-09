@@ -21,10 +21,10 @@ class MailboxViewController: UIViewController {
 
     var sidebarColor = UIColor(red: 0.269, green: 0.269, blue: 0.269, alpha: 1.0)
     var defaultColor = UIColor(red: 0.889, green: 0.889, blue: 0.889, alpha: 1.0)
-    var archiveColor = UIColor(red: 0.361, green: 0.859, blue: 0.39, alpha: 1.0)
-    var deleteColor  = UIColor(red: 0.943, green: 0.337, blue: 0.0, alpha: 1.0)
-    var laterColor   = UIColor(red: 0.999, green: 0.838, blue: 0.0, alpha: 1.0)
-    var listColor    = UIColor(red: 0.847, green: 0.656, blue: 0.45, alpha: 1.0)
+    var archiveColor = UIColor(red: 0.361, green: 0.859, blue: 0.39,  alpha: 1.0)
+    var deleteColor  = UIColor(red: 0.943, green: 0.337, blue: 0.0,   alpha: 1.0)
+    var laterColor   = UIColor(red: 0.999, green: 0.838, blue: 0.0,   alpha: 1.0)
+    var listColor    = UIColor(red: 0.847, green: 0.656, blue: 0.45,  alpha: 1.0)
     
     var messageOriginalCenter: CGPoint!
     var inboxViewOriginalCenter: CGPoint!
@@ -56,23 +56,15 @@ class MailboxViewController: UIViewController {
         inboxView.addGestureRecognizer(edgeGesture)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func swipeMessage(sender: AnyObject) {
         let translation = sender.translationInView(view)
-        let velocity = sender.velocityInView(view)
         
         if sender.state == .Began {
             messageOriginalCenter = message.center
         } else if sender.state == .Changed {
             message.center = CGPoint(x: messageOriginalCenter.x + translation.x, y: messageOriginalCenter.y)
-//            print("translation: \(translation.x)")
             
             switch translation.x {
-                
             // Swipe Right
             case 0...60:
                 leftMenuIcon.alpha = convertValue(translation.x, r1Min: 0, r1Max: 60, r2Min: 0.2, r2Max: 1)
@@ -87,7 +79,6 @@ class MailboxViewController: UIViewController {
                 leftMenuIcon.image = UIImage(named: "delete_icon")
                 leftMenuIcon.transform = CGAffineTransformMakeTranslation(message.frame.origin.x - 60, 0)
                 action = "delete"
-                
             // Swipe Left
             case -60...(-0.1):
                 rightMenuIcon.alpha = convertValue(translation.x, r1Min: -0.5, r1Max: -60, r2Min: 0.2, r2Max: 1)
@@ -141,6 +132,15 @@ class MailboxViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func closeSidebarMenu(sender: AnyObject) {
+        print("close")
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 2, options: [], animations: {
+                self.inboxView.frame.origin.x = 0
+            }, completion: nil
+        )
+    }
+    
     func scheduleForLaterToday() {
         delay(0.25) {
             self.refreshInbox()
@@ -189,14 +189,19 @@ class MailboxViewController: UIViewController {
     
     func onEdgePan(sender: UIScreenEdgePanGestureRecognizer) {
         let translation = sender.translationInView(view)
+        let velocity = sender.velocityInView(view)
         
         if sender.state == .Began {
             inboxViewOriginalCenter = inboxView.center
         } else if sender.state == .Changed {
             inboxView.center = CGPoint(x: inboxViewOriginalCenter.x + translation.x, y: inboxViewOriginalCenter.y)
-            print("panned edge")
         } else if sender.state == .Ended {
-            
+            if velocity.x > 0 {
+                UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 2, options: [], animations: {
+                    self.inboxView.frame.origin.x = 318
+                    }, completion: nil
+                )
+            }
         }
     }
 }

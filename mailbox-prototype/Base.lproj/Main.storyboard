@@ -17,7 +17,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sidebar" id="Xhf-2d-CmC">
-                                        <rect key="frame" x="29" y="0.0" width="317" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="317" height="667"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <animations/>
                                     </imageView>
@@ -67,6 +67,14 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <animations/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qMO-bA-q7D" userLabel="menu button">
+                                        <rect key="frame" x="16" y="25" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="closeSidebarMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aZu-sY-RKs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
